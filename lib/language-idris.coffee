@@ -6,10 +6,10 @@ url = require 'url'
 module.exports =
   config:
     pathToIdris:
-      title: 'Idris Location'
+      title: 'Blodwen Location'
       type: 'string'
-      default: 'idris'
-      description: 'Location of the Idris executable (e.g. /usr/local/bin/idris)'
+      default: 'blodwen'
+      description: 'Location of the Blodwen executable (e.g. /usr/local/bin/blodwen)'
     panelFontFamily:
       type: 'string'
       default: ''
