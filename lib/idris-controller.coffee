@@ -32,7 +32,7 @@ class IdrisController
     'language-idris:close-information-view': @hideAndClearMessagePanel
 
   isIdrisFile: (uri) ->
-    uri?.match? /\.idr$/
+    uri?.match? /\.blod$/
 
   # check if this is a literate idris file
   isLiterateGrammar: () ->
