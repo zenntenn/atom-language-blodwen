@@ -1,4 +1,5 @@
 
+# This is highly experimental, not ready yet.  Just forking the Idris mode to try to work with Blodwen
 
 # An Idris Mode for Atom
 
