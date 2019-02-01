@@ -10,7 +10,7 @@ class HolesView extends HTMLElement
     @holesContainer = dom.createCodeElement()
     @holesContainer.classList.add 'idris-mode'
     @holesContainer.classList.add 'block'
-    @holesContainer.classList.add 'idris-holes-view'
+    @holesContainer.classList.add 'blodwen-holes-view'
 
     @appendChild @holesContainer
     @showHoles holes
@@ -55,5 +55,5 @@ class HolesView extends HTMLElement
     ]
 
 module.exports = HolesView =
-  document.registerElement 'idris-holes-view',
+  document.registerElement 'blodwen-holes-view',
     prototype: HolesView.prototype

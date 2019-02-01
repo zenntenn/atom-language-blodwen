@@ -16,5 +16,5 @@ class InformationView extends HTMLElement
       @text @obligation
 
 module.exports = InformationView =
-  document.registerElement 'idris-informations-view',
+  document.registerElement 'blodwen-informations-view',
     prototype: InformationView.prototype
