@@ -1,10 +1,10 @@
 {
-  "name": "language-idris",
-  "main": "./lib/language-idris",
+  "name": "language-blodwen",
+  "main": "./lib/language-blodwen",
   "version": "0.5.0",
   "private": true,
-  "description": "A plugin for developing with Idris",
-  "repository": "https://github.com/idris-hackers/atom-language-idris",
+  "description": "A plugin for developing with Blodwen",
+  "repository": "https://github.com/zenntenn/atom-language-blodwen",
   "license": "MIT",
   "engines": {
     "atom": ">=0.180.0"
