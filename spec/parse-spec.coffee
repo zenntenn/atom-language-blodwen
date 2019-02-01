@@ -134,5 +134,5 @@ describe "A parser", ->
     expect(sexpFormatter.formatSexp(list7)).toEqual(test7)
 
   it "should serialize common commands.", ->
-    loadFile = [[':load-file', "idris.idr"], 1]
-    expect(sexpFormatter.formatSexp(loadFile)).toEqual '((:load-file "idris.idr") 1)'
+    loadFile = [[':load-file', "blodwen.blod"], 1]
+    expect(sexpFormatter.formatSexp(loadFile)).toEqual '((:load-file "blodwen.blod") 1)'

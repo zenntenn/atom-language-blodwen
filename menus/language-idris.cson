@@ -32,7 +32,7 @@
     }
   ]
 'context-menu':
-  'atom-text-editor[data-grammar~=\"idris\"]': [
+  'atom-text-editor[data-grammar~=\"blodwen\"]': [
     {
       'label': 'Blodwen'
       'submenu': [

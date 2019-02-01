@@ -1,33 +1,33 @@
 {
-  "atom-text-editor[data-grammar~=\"idris\"]": {
-    "ctrl-alt-c": "language-idris:case-split",
-    "ctrl-alt-t": "language-idris:type-of",
-    "ctrl-alt-a": "language-idris:add-clause",
-    "ctrl-alt-s": "language-idris:proof-search",
-    "ctrl-alt-d": "language-idris:docs-for",
-    "ctrl-alt-enter": "language-idris:open-repl",
-    "ctrl-alt-w": "language-idris:make-with",
-    "ctrl-alt-l": "language-idris:make-lemma",
-    "ctrl-alt-r": "language-idris:typecheck",
-    "ctrl-alt-m": "language-idris:make-case",
-    "ctrl-alt-p": "language-idris:add-proof-clause",
-    "ctrl-alt-b": "language-idris:browse-namespace",
-    "escape": "language-idris:close-information-view"
+  "atom-text-editor[data-grammar~=\"blodwen\"]": {
+    "ctrl-alt-c": "language-blodwen:case-split",
+    "ctrl-alt-t": "language-blodwen:type-of",
+    "ctrl-alt-a": "language-blodwen:add-clause",
+    "ctrl-alt-s": "language-blodwen:proof-search",
+    "ctrl-alt-d": "language-blodwen:docs-for",
+    "ctrl-alt-enter": "language-blodwen:open-repl",
+    "ctrl-alt-w": "language-blodwen:make-with",
+    "ctrl-alt-l": "language-blodwen:make-lemma",
+    "ctrl-alt-r": "language-blodwen:typecheck",
+    "ctrl-alt-m": "language-blodwen:make-case",
+    "ctrl-alt-p": "language-blodwen:add-proof-clause",
+    "ctrl-alt-b": "language-blodwen:browse-namespace",
+    "escape": "language-blodwen:close-information-view"
   },
 
-  ".platform-darwin, atom-text-editor[data-grammar~=\"idris\"]": {
-    "ctrl-cmd-c": "language-idris:case-split",
-    "ctrl-cmd-t": "language-idris:type-of",
-    "ctrl-cmd-a": "language-idris:add-clause",
-    "ctrl-cmd-s": "language-idris:proof-search",
-    "ctrl-cmd-d": "language-idris:docs-for",
-    "ctrl-cmd-enter": "language-idris:open-repl",
-    "ctrl-cmd-w": "language-idris:make-with",
-    "ctrl-cmd-l": "language-idris:make-lemma",
-    "ctrl-cmd-r": "language-idris:typecheck",
-    "ctrl-cmd-m": "language-idris:make-case",
-    "ctrl-cmd-p": "language-idris:add-proof-clause",
-    "ctrl-cmd-b": "language-idris:browse-namespace",
-    "escape": "language-idris:close-information-view"
+  ".platform-darwin, atom-text-editor[data-grammar~=\"blodwen\"]": {
+    "ctrl-cmd-c": "language-blodwen:case-split",
+    "ctrl-cmd-t": "language-blodwen:type-of",
+    "ctrl-cmd-a": "language-blodwen:add-clause",
+    "ctrl-cmd-s": "language-blodwen:proof-search",
+    "ctrl-cmd-d": "language-blodwen:docs-for",
+    "ctrl-cmd-enter": "language-blodwen:open-repl",
+    "ctrl-cmd-w": "language-blodwen:make-with",
+    "ctrl-cmd-l": "language-blodwen:make-lemma",
+    "ctrl-cmd-r": "language-blodwen:typecheck",
+    "ctrl-cmd-m": "language-blodwen:make-case",
+    "ctrl-cmd-p": "language-blodwen:add-proof-clause",
+    "ctrl-cmd-b": "language-blodwen:browse-namespace",
+    "escape": "language-blodwen:close-information-view"
   }
 }

@@ -26,7 +26,7 @@ module.exports =
   activate: ->
     @controller = new IdrisController
 
-    subscription = atom.commands.add 'atom-text-editor[data-grammar~="idris"]', @controller.getCommands()
+    subscription = atom.commands.add 'atom-text-editor[data-grammar~="blodwen"]', @controller.getCommands()
     @subscriptions = new CompositeDisposable
     @subscriptions.add subscription
 
