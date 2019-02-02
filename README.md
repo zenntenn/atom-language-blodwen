@@ -1,7 +1,8 @@
 
-# This is highly experimental, not ready yet.  Just forking the Blodwen mode to try to work with Blodwen
+# This is highly experimental, not ready yet.  Just forking the Blodwen mode to try to work with Blodwen.
+# It does not currently support all the thins claimed below
 
-# An Blodwen Mode for Atom
+# A Blodwen Mode for Atom
 
 A work-in-progress Blodwen Mode for Atom.
 
