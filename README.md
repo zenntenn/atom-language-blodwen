@@ -1,6 +1,6 @@
 
 # This is highly experimental, not ready yet.  Just forking the Blodwen mode to try to work with Blodwen.
-# It does not currently support all the thins claimed below
+# It does not currently support all the things claimed below.
 
 # A Blodwen Mode for Atom
 
