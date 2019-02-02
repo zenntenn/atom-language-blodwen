@@ -3,7 +3,7 @@ dom = require '../utils/dom'
 
 class InformationView extends HTMLElement
   initialize: (params) ->
-    @classList.add 'idris-panel'
+    @classList.add 'blodwen-panel'
     @obligation = params.obligation
     @highlightingInfo = params.highlightingInfo
     if @highlightingInfo?

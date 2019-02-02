@@ -20,17 +20,17 @@ AproposCycle =
       aproposAnswer =
         if apropos.code
           highlightedCode = AproposCycle.highlight apropos
-          CycleDOM.h 'pre', { className: 'idris-apropos-output', style: styles }, highlightedCode
+          CycleDOM.h 'pre', { className: 'blodwen-apropos-output', style: styles }, highlightedCode
         else
           CycleDOM.h 'span', ''
 
       CycleDOM.h 'div',
         {
-          className: 'idris-panel-view'
+          className: 'blodwen-panel-view'
         },
         [
-          CycleDOM.h 'input', { type: 'text', className: 'native-key-bindings idris-repl-input-field' }, ''
-          CycleDOM.h 'div', {className: 'idris-repl-lines' }, aproposAnswer
+          CycleDOM.h 'input', { type: 'text', className: 'native-key-bindings blodwen-repl-input-field' }, ''
+          CycleDOM.h 'div', {className: 'blodwen-repl-lines' }, aproposAnswer
         ]
 
   main: (responses) ->
@@ -43,7 +43,7 @@ AproposCycle =
     CONTENT: input
 
   # driver : forall a.
-  #   IdrisModel -> Observable String ->
+  #   BlodwenModel -> Observable String ->
   #   Observable (List { a | code : String, highlightInformation : highlightInformation })
   driver:
     (options) ->

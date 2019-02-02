@@ -2,7 +2,7 @@
 { stream } = require 'nu-stream'
 
 # this module defines the parse required to deal with S-Expressions
-# as used for the communication with the Idris IDE
+# as used for the communication with the Blodwen IDE
 
 streamToString = (s) -> stream.toArray(s).join ''
 

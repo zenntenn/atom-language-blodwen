@@ -1,14 +1,14 @@
 REPLView = require './repl-view'
 AproposView = require './apropos-view'
 
-class IdrisPanel
+class BlodwenPanel
   constructor: (@controller, @panel) ->
 
   getTitle: ->
     switch @panel
-      when "repl" then "Idris: REPL"
-      when "apropos" then "Idris: Apropos"
-      else "Idris ?"
+      when "repl" then "Blodwen: REPL"
+      when "apropos" then "Blodwen: Apropos"
+      else "Blodwen ?"
 
   getViewClass: ->
     switch @panel
@@ -17,8 +17,8 @@ class IdrisPanel
 
   getURI: ->
     switch @panel
-      when "repl" then "idris://repl"
-      when "apropos" then "idris://apropos"
+      when "repl" then "blodwen://repl"
+      when "apropos" then "blodwen://apropos"
 
 module.exports =
-  IdrisPanel: IdrisPanel
+  BlodwenPanel: BlodwenPanel

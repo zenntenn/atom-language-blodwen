@@ -1,10 +1,10 @@
-IdrisIdeMode = require './idris-ide-mode'
+BlodwenIdeMode = require './blodwen-ide-mode'
 Logger = require './utils/Logger'
 Rx = require 'rx-lite'
 JS = require './utils/js'
 path = require 'path'
 
-class IdrisModel
+class BlodwenModel
   requestId: 0
   ideModeRef: null
   subjects: { }
@@ -18,7 +18,7 @@ class IdrisModel
       @ideModeRef.stop()
       @ideModeRef = null
     if !@ideModeRef
-      @ideModeRef = new IdrisIdeMode
+      @ideModeRef = new BlodwenIdeMode
       @ideModeRef.on 'message', @handleCommand
       @ideModeRef.start compilerOptions
       @oldCompilerOptions = compilerOptions
@@ -155,4 +155,4 @@ class IdrisModel
   browseNamespace: (name) ->
     @prepareCommand [':browse-namespace', name]
 
-module.exports = IdrisModel
+module.exports = BlodwenModel

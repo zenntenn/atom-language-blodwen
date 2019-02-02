@@ -1,0 +1,13 @@
+name: 'Blodwen (Literate)'
+scopeName: 'source.blodwen.literate'
+fileTypes: ['.blod']
+patterns:
+  [
+    {
+      'match': '^(?!>)(.*)(?=\n)'
+      'name': 'comment.line.documentation.blodwen.literate'
+    }
+    {
+      'include': 'source.blodwen'
+    }
+  ]

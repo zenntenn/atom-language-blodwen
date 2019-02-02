@@ -6,7 +6,7 @@ dependencies.
 
 Supported are the `opts` and `sourcedir` options.
 
-There is [more information](http://docs.idris-lang.org/en/latest/tutorial/packages.html) about `ipkg`-files in the idris documentation.
+There is [more information](http://docs.blodwen-lang.org/en/latest/tutorial/packages.html) about `ipkg`-files in the blodwen documentation.
 
 
 ## Example
@@ -15,8 +15,8 @@ You have a folder that looks like this:
 
 ```
 src
-└───Main.idr
-└───OtherFile.idr
+└───Main.blod
+└───OtherFile.blod
 your-project.ipkg
 ```
 
@@ -36,7 +36,7 @@ opts = "-p lightyear effects"
 the package will search in the `src`-directory for your files and will
 load the dependencies specified in `opts`.
 
-Newer versions of Idris also accept packages specified in a comma-separated list
+Newer versions of Blodwen also accept packages specified in a comma-separated list
 under the `pkgs` key:
 
 ```

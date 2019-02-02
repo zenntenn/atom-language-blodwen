@@ -1,76 +1,76 @@
-name: 'Idris'
-scopeName: 'source.idris'
+name: 'Blodwen'
+scopeName: 'source.blodwen'
 fileTypes: ['blod']
 patterns:
   [
     {
-      name: 'keyword.control.idris'
+      name: 'keyword.control.blodwen'
       match: '\\b(if|then|else|do|let|in|codata|record|dsl)\\b'
     }
     {
-      name: 'keyword.control.idris'
+      name: 'keyword.control.blodwen'
       match: '\\b(impossible|case|of|total|partial|mutual|infix|infixl|infixr)\\b'
     }
     {
-      name: 'keyword.control.idris'
+      name: 'keyword.control.blodwen'
       match: '\\b(where|with|syntax|proof|postulate|using|namespace|class|instance|interface|implementation|record|rewrite)\\b'
     }
     {
-      name: 'keyword.control.idris'
+      name: 'keyword.control.blodwen'
       match:  '\\b(public|private|export|implicit)\\b'
     }
     {
-      name: 'comment.line.idris'
+      name: 'comment.line.blodwen'
       match: '(--).*$\n?'
       comment: 'Line comment'
     }
     {
-      name: 'comment.documentation.line.idris'
+      name: 'comment.documentation.line.blodwen'
       match: '(\\|\\|\\|).*$\n?'
       comment: 'Line comment'
     }
     {
-      name: 'storage.type.function.idris'
+      name: 'storage.type.function.blodwen'
       match: '\\?[-!#\\$%&\\*\\+\\.\\/<=>@\\\\\^\|~:]+|[-!#\\$%&\\*\\+\\.\\/<=>@\\\\\^\|~:\\?][-!#\\$%&\\*\\+\\.\\/<=>@\\\\\^\|~:]*'
     }
     {
-      name: 'storage.type.builtin.idris'
+      name: 'storage.type.builtin.blodwen'
       match: '\\b(Type|Int|Nat|Integer|Float|Char|String|Ptr|Bits8|Bits16|Bits32|Bits64|Bool)\\b'
     }
     {
-      name: 'constant.numeric.idris'
+      name: 'constant.numeric.blodwen'
       match: '\\b(S|Z)\\b'
     }
     {
       match: '\\b([0-9]+|0([xX][0-9a-fA-F]+|[oO][0-7]+))\\b'
-      name: 'constant.numeric.idris'
+      name: 'constant.numeric.blodwen'
       comment: 'integer literal'
     }
     {
       match: '\\b([0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)\\b'
-      name: 'constant.numeric.float.idris'
+      name: 'constant.numeric.float.blodwen'
       comment: 'float literal'
     }
     {
       match: '\\(\\)'
-      name: 'constant.unit.idris'
+      name: 'constant.unit.blodwen'
     }
     {
-      name: 'comment.block.idris'
+      name: 'comment.block.blodwen'
       begin: '\\{-'
       end: '-\\}'
       comment: 'Block comment'
     }
     {
-      name: 'string.quoted.double.idris'
+      name: 'string.quoted.double.blodwen'
       begin: '"'
       beginCaptures:
         0:
-          name: 'punctuation.definition.string.begin.idris'
+          name: 'punctuation.definition.string.begin.blodwen'
       end: '"'
       endCaptures:
         0:
-          name: 'punctuation.definition.string.end.idris'
+          name: 'punctuation.definition.string.end.blodwen'
       patterns:
         [
           {
@@ -79,54 +79,54 @@ patterns:
         ]
     }
     {
-      name: 'variable.other.idris'
+      name: 'variable.other.blodwen'
       match : "(?<!\\w)\\'\\w++(?!')"
     }
     {
-      name: 'string.quoted.single.idris'
+      name: 'string.quoted.single.blodwen'
       match: "(')(?:(?:\\\\\")|(?:\\\\[0-9]+)|(\\\\o[0-7]+)|(\\\\x[0-9a-fA-F]+)|(?:[^'])|(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL))(')"
       captures:
         1:
-          name: 'punctuation.definition.string.begin.idris'
+          name: 'punctuation.definition.string.begin.blodwen'
         2:
-          name: 'constant.character.escape.octal.idris'
+          name: 'constant.character.escape.octal.blodwen'
         3:
-          name: 'constant.character.escape.hexadecimal.idris'
+          name: 'constant.character.escape.hexadecimal.blodwen'
         4:
-          name: 'constant.character.escape.control.idris'
+          name: 'constant.character.escape.control.blodwen'
         5:
-          name: 'punctuation.definition.string.end.idris'
+          name: 'punctuation.definition.string.end.blodwen'
       patterns:
         [
           {
-            name: 'invalid.illegal.idris'
+            name: 'invalid.illegal.blodwen'
             match: "\\\\n"
           }
         ]
     }
     {
-      name: 'keyword.operator.function.infix.idris'
+      name: 'keyword.operator.function.infix.blodwen'
       begin: '`(?![\{|\(])'
       beginCaptures:
         0:
-          name: 'punctuation.definition.entity.idris'
+          name: 'punctuation.definition.entity.blodwen'
       end: '`'
       endCaptures:
         0:
-          name: 'punctuation.definition.entity.idris'
+          name: 'punctuation.definition.entity.blodwen'
     }
     {
       begin: '\\b(module)\\b'
       beginCaptures:
         1:
-          name: 'keyword.control.idris'
+          name: 'keyword.control.blodwen'
       end: '($|;|(?=--))'
-      name: 'meta.module.idris'
+      name: 'meta.module.blodwen'
       patterns:
         [
           {
             match: "([a-zA-Z._']+)"
-            name: 'meta.declaration.module.idris'
+            name: 'meta.declaration.module.blodwen'
           }
         ]
     }
@@ -134,64 +134,64 @@ patterns:
       begin: '\\b(import\\s+public|import)\\b'
       beginCaptures:
         1:
-          name: 'keyword.other.idris'
+          name: 'keyword.other.blodwen'
       end: '($|;|(?=--))'
-      name: 'meta.import.idris'
+      name: 'meta.import.blodwen'
       patterns:
         [
           {
             match: "([a-zA-Z._']+)"
-            name: 'support.other.module.idris'
+            name: 'support.other.module.blodwen'
           }
         ]
     }
     {
-      name: 'meta.declaration.data.idris'
+      name: 'meta.declaration.data.blodwen'
       begin: "\\b(data)\\s+([\\w']+)\\s*(:)?"
       beginCaptures:
         1:
-          name: 'keyword.other.idris'
+          name: 'keyword.other.blodwen'
         2:
-          name: 'entity.name.type.idris'
+          name: 'entity.name.type.blodwen'
         3:
-          name: 'keyword.operator.colon.idris'
+          name: 'keyword.operator.colon.blodwen'
       end: '\\b(where)\\b|(=)|$'
       endCaptures:
         1:
-          name: 'keyword.other.idris'
+          name: 'keyword.other.blodwen'
         2:
-          name: 'keyword.operator.idris'
+          name: 'keyword.operator.blodwen'
       patterns:
         [
           include: '#type_signature'
         ]
     }
     {
-      name: 'meta.declaration.data.idris'
+      name: 'meta.declaration.data.blodwen'
       begin: "\\b(parameters)\\s+(\\()"
       end: "(\\))$"
       beginCaptures:
         1:
-          name: 'keyword.other.idris'
+          name: 'keyword.other.blodwen'
         2:
-          name: 'punctuation.context.begin.idris'
+          name: 'punctuation.context.begin.blodwen'
       endCaptures:
         1:
-          name: 'punctuation.context.begin.idris'
+          name: 'punctuation.context.begin.blodwen'
       patterns:
         [
             {
-              name: 'comment.line.idris'
+              name: 'comment.line.blodwen'
               match: '(--).*$\n?'
             }
             {
-              name: 'meta.parameter.block.named.idris'
+              name: 'meta.parameter.block.named.blodwen'
               match: "((\\w+)\\s*(:)\\s*(\\w+)\\s*)"
               captures:
                 2:
-                  name: 'entity.name.tag.idris'
+                  name: 'entity.name.tag.blodwen'
                 3:
-                  name: 'keyword.operator.colon.idris'
+                  name: 'keyword.operator.colon.blodwen'
             }
         ]
     }
@@ -199,7 +199,7 @@ patterns:
       include: '#function_signature'
     }
     {
-      name: 'keyword.operator.idris'
+      name: 'keyword.operator.blodwen'
       match: "[|&!%$?~+:\\-.=</>\\\\*]+"
     }
     {
@@ -211,18 +211,18 @@ repository:
     patterns:
       [
         {
-          name: 'meta.context-signature.idris'
+          name: 'meta.context-signature.blodwen'
           match: "([\\w._']+)((\\s+[\\w_']+)+)\\s*(=>)"
           captures:
             1:
-              name: 'entity.other.inherited-class.idris'
+              name: 'entity.other.inherited-class.blodwen'
             2:
-              name: 'entity.other.attribute-name.idris'
+              name: 'entity.other.attribute-name.blodwen'
             4:
-              name: 'keyword.operator.double-arrow.idris'
+              name: 'keyword.operator.double-arrow.blodwen'
         }
         {
-          name: 'meta.context-signature.idris'
+          name: 'meta.context-signature.blodwen'
           comment:
             """For things like '(Eq a, Show b) =>'
             It begins with '(' either followed by ') =>' on the same line,
@@ -230,23 +230,23 @@ repository:
           begin: "(\\()((?=.*\\)\\s*=>)|(?=[^)]*$))"
           beginCaptures:
             1:
-              name: 'punctuation.context.begin.idris'
+              name: 'punctuation.context.begin.blodwen'
           end: "(\\))\\s*(=>)"
           endCaptures:
             1:
-              name: 'punctuation.context.end.idris'
+              name: 'punctuation.context.end.blodwen'
             2:
-              name: 'keyword.operator.double-arrow.idris'
+              name: 'keyword.operator.double-arrow.blodwen'
           patterns:
             [
               {
-                name: 'meta.class-constraint.idris'
+                name: 'meta.class-constraint.blodwen'
                 match: "([\\w']+)\\s+([\\w']+)"
                 captures:
                   1:
-                    name: 'entity.other.inherited-class.idris'
+                    name: 'entity.other.inherited-class.blodwen'
                   2:
-                    name: 'entity.other.attribute-name.idris'
+                    name: 'entity.other.attribute-name.blodwen'
               }
             ]
         }
@@ -259,12 +259,12 @@ repository:
           include: '#prelude_type'
         }
         {
-          name: 'meta.parameter.named.idris'
+          name: 'meta.parameter.named.blodwen'
           comment: '(x : Nat)'
           begin: "\\(([\\w']+)\\s*:(?!:)"
           beginCaptures:
             1:
-              name: 'entity.name.tag.idris'
+              name: 'entity.name.tag.blodwen'
           end: "\\)"
           patterns:
             [
@@ -274,14 +274,14 @@ repository:
             ]
         }
         {
-          name: 'meta.parameter.implicit.idris'
+          name: 'meta.parameter.implicit.blodwen'
           comment: '{auto p : a = b}'
           begin: "\\{((auto|default .+)\\s+)?([\\w']+)\\s*:(?!:)"
           beginCaptures:
             1:
-              name: 'storage.modifier.idris'
+              name: 'storage.modifier.blodwen'
             3:
-              name: 'entity.name.tag.idris'
+              name: 'entity.name.tag.blodwen'
           end: '\\}'
           patterns:
             [
@@ -295,7 +295,7 @@ repository:
     patterns:
       [
         {
-          name: 'keyword.operator.arrow.idris'
+          name: 'keyword.operator.arrow.blodwen'
           match: '->'
         }
         {
@@ -309,15 +309,15 @@ repository:
         }
       ]
   function_signature:
-    name: 'meta.function.type-signature.idris'
+    name: 'meta.function.type-signature.blodwen'
     begin: "(([\\w']+)|\\(([|!%$+\\-.,=</>:]+)\\))\\s*(:)(?!:)"
     beginCaptures:
       2:
-        name: 'entity.name.function.idris'
+        name: 'entity.name.function.blodwen'
       3:
-        name: 'entity.name.function.idris'
+        name: 'entity.name.function.blodwen'
       4:
-        name: 'keyword.operator.colon.idris'
+        name: 'keyword.operator.colon.blodwen'
     end: "(;|(?=--)|(?<=[^\\s>])\\s*(?!->)\\s*$)"
     patterns:
       [
@@ -332,15 +332,15 @@ repository:
     patterns:
       [
         {
-          name: 'constant.language.unit.idris'
+          name: 'constant.language.unit.blodwen'
           match: "\\(\\)"
         }
         {
-          name: 'constant.language.bottom.idris'
+          name: 'constant.language.bottom.blodwen'
           match: "_\\|_"
         }
         {
-          name: 'constant.language.underscore.idris'
+          name: 'constant.language.underscore.blodwen'
           match: "\\b_\\b"
         }
       ]
@@ -348,15 +348,15 @@ repository:
     patterns:
       [
         {
-          name: 'constant.character.escape.ascii.idris'
+          name: 'constant.character.escape.ascii.blodwen'
           match: '\\\\(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|[abfnrtv\\\\\\"\'\\&])'
         }
         {
-          name: 'constant.character.escape.octal.idris'
+          name: 'constant.character.escape.octal.blodwen'
           match: '\\\\o[0-7]+|\\\\x[0-9A-Fa-f]+|\\\\[0-9]+'
         }
         {
-          name: 'constant.character.escape.control.idris'
+          name: 'constant.character.escape.control.blodwen'
           match: '\\^[A-Z@\\[\\]\\\\\\^_]'
         }
       ]
@@ -364,7 +364,7 @@ repository:
     patterns:
       [
         {
-          'name': 'entity.name.tag.idris'
+          'name': 'entity.name.tag.blodwen'
           'match': '\\b[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\']*(?:\\.[\\p{Lu}\\p{Lt}][\\p{Ll}_\\p{Lu}\\p{Lt}\\p{Nd}\']*)*\\b'
         }
       ]

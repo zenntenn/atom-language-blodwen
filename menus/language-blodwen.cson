@@ -9,23 +9,23 @@
             [
               {
                 'label': 'Typecheck'
-                'command': 'language-idris:typecheck'
+                'command': 'language-blodwen:typecheck'
               }
               {
                 'label': 'Open REPL'
-                'command': 'language-idris:open-repl'
+                'command': 'language-blodwen:open-repl'
               }
               {
                 'label': 'Apropos'
-                'command': 'language-idris:apropos'
+                'command': 'language-blodwen:apropos'
               }
               {
                 'label': 'Holes'
-                'command': 'language-idris:holes'
+                'command': 'language-blodwen:holes'
               }
               {
                 'label': 'Stop Compiler'
-                'command': 'language-idris:stop-compiler'
+                'command': 'language-blodwen:stop-compiler'
               }
             ]
         ]
@@ -38,15 +38,15 @@
       'submenu': [
         {
           'label': 'Typecheck'
-          'command': 'language-idris:typecheck'
+          'command': 'language-blodwen:typecheck'
         }
         {
           'label': 'Type search'
-          'command': 'language-idris:type-of'
+          'command': 'language-blodwen:type-of'
         }
         {
           'label': 'Docs for'
-          'command': 'language-idris:docs-for'
+          'command': 'language-blodwen:docs-for'
         }
       ]
     }

@@ -1,9 +1,9 @@
 
-# This is highly experimental, not ready yet.  Just forking the Idris mode to try to work with Blodwen
+# This is highly experimental, not ready yet.  Just forking the Blodwen mode to try to work with Blodwen
 
-# An Idris Mode for Atom
+# An Blodwen Mode for Atom
 
-A work-in-progress Idris Mode for Atom.
+A work-in-progress Blodwen Mode for Atom.
 
 It supports:
 
@@ -24,7 +24,7 @@ It supports:
  - make-lemma (ctrl-alt-l)
    - lift a hole into a function context
  - Add proof case (ctrl-alt-p)
-   - alternate version of clause adding when trying to proof a type. http://docs.idris-lang.org/en/latest/reference/misc.html#match-application
+   - alternate version of clause adding when trying to proof a type. http://docs.blodwen-lang.org/en/latest/reference/misc.html#match-application
  - Browse namespace (ctrl-alt-b)
    - select the name of a namespace beforehand
  - Showing holes
@@ -35,15 +35,15 @@ It supports:
 ## Usage
 
 The package should work after installation. The only thing you might need to
-set is the path to the `idris` executable in the config of this package.
+set is the path to the `blodwen` executable in the config of this package.
 If it doesn't work it's probably a bug.
 
-There is a tutorial on how to use the editor under [`documentation/tutorial.md`](https://github.com/idris-hackers/atom-language-idris/blob/master/documentation/tutorial.md).
+There is a tutorial on how to use the editor under [`documentation/tutorial.md`](https://github.com/blodwen-hackers/atom-language-blodwen/blob/master/documentation/tutorial.md).
 
 ### Working with ipkg files
 
 Place your ipkg file in the top level directory of your project.
-There is more information available in a in a [separate documentation](https://github.com/idris-hackers/atom-language-idris/blob/master/documentation/ipkg.md).
+There is more information available in a in a [separate documentation](https://github.com/blodwen-hackers/atom-language-blodwen/blob/master/documentation/ipkg.md).
 
 ## Todo
 

@@ -4,15 +4,15 @@ parse = require './utils/parse'
 { EventEmitter } = require 'events'
 { spawn } = require 'child_process'
 
-class IdrisIdeMode extends EventEmitter
+class BlodwenIdeMode extends EventEmitter
   process: null
   buffer: ''
-  idrisBuffers: 0
+  blodwenBuffers: 0
   compilerOptions: { }
 
   start: (compilerOptions) ->
     if (not @process?) || @process.killed
-      pathToIdris = atom.config.get("language-idris.pathToIdris")
+      pathToBlodwen = atom.config.get("language-blodwen.pathToBlodwen")
       pkgs =
         if compilerOptions.pkgs && compilerOptions.pkgs.length
           p = compilerOptions.pkgs.map (p) -> ["-p", p]
@@ -26,7 +26,7 @@ class IdrisIdeMode extends EventEmitter
         else
           []
 
-      tabLength = atom.config.get('editor.tabLength', scope: ['source.idris'])
+      tabLength = atom.config.get('editor.tabLength', scope: ['source.blodwen'])
       configParams = ['--ide-mode', '--indent-with=' + tabLength,
                       '--indent-clause=' + tabLength]
 
@@ -39,7 +39,7 @@ class IdrisIdeMode extends EventEmitter
         else
           { }
       @process =
-        spawn pathToIdris, parameters, options
+        spawn pathToBlodwen, parameters, options
       @process.on 'error', @error
       @process.on 'exit', @exited
       @process.on 'close', @exited
@@ -60,8 +60,8 @@ class IdrisIdeMode extends EventEmitter
   error: (error) ->
     e =
       if error.code == 'ENOENT'
-        short: "Couldn't find idris executable"
-        long: "Couldn't find idris executable at \"#{error.path}\""
+        short: "Couldn't find blodwen executable"
+        long: "Couldn't find blodwen executable at \"#{error.path}\""
       else
         short: error.code
         long: error.message
@@ -70,11 +70,11 @@ class IdrisIdeMode extends EventEmitter
 
   exited: (code, signal) ->
     if signal == "SIGTERM"
-      short = "The idris compiler was closed"
+      short = "The blodwen compiler was closed"
       long = "You stopped the compiler"
       atom.notifications.addInfo short, detail: long
     else
-      short = "The idris compiler was closed or crashed"
+      short = "The blodwen compiler was closed or crashed"
       long =
         if signal
           "It was closed with the signal: #{signal}"
@@ -106,4 +106,4 @@ class IdrisIdeMode extends EventEmitter
         # while-loop and wait for the next data-event
         break
 
-module.exports = IdrisIdeMode
+module.exports = BlodwenIdeMode

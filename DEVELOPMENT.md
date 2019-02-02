@@ -2,13 +2,13 @@
 
 ## Getting started
 
-The easiest way is to get the source of the `language-idris` package via the `apm`-tooling:
+The easiest way is to get the source of the `language-blodwen` package via the `apm`-tooling:
 
 ```bash
-apm dev language-idris
+apm dev language-blodwen
 ```
 
-This will install the package in the folder `~/github/language-idris`. You will then be able to use the development version of `language-idris` by invoking atom from any directory containing some idris files using
+This will install the package in the folder `~/github/language-blodwen`. You will then be able to use the development version of `language-blodwen` by invoking atom from any directory containing some blodwen files using
 
 ```bash
 atom -d .
@@ -23,7 +23,7 @@ Atom is basically a browser and when doing development it can be useful to open 
 You can edit the sourcecode in another atom window:
 
 ```
-$~/github/language-idris> atom .
+$~/github/language-blodwen> atom .
 ```
 
 Anytime you want to restart your project with the latest changes, you can just reload the window using `Window: Reload`.
@@ -31,12 +31,12 @@ Anytime you want to restart your project with the latest changes, you can just r
 ## Code Structure
 
 ```bash
-~/github/language-idris/lib (master %)$ tree
+~/github/language-blodwen/lib (master %)$ tree
 .
-├── idris-controller.coffee
-├── idris-ide-mode.coffee
-├── idris-model.coffee
-├── language-idris.coffee
+├── blodwen-controller.coffee
+├── blodwen-ide-mode.coffee
+├── blodwen-model.coffee
+├── language-blodwen.coffee
 ├── utils
 │   ├── Logger.coffee
 │   ├── dom.coffee
@@ -55,9 +55,9 @@ Anytime you want to restart your project with the latest changes, you can just r
     └── repl-view.coffee
 ```
 
-The best point to get started is to dig into `idris-controller.coffee`. Almost all defined commands talk to a spawned idris process using the [Idris IDE protocol](http://docs.idris-lang.org/en/latest/reference/ide-protocol.html). This protocol communicates with Idris via S-Exp Expressions. If you want to see this communication have a look at `utils/Logger.coffee`.
+The best point to get started is to dig into `blodwen-controller.coffee`. Almost all defined commands talk to a spawned blodwen process using the [Blodwen IDE protocol](http://docs.blodwen-lang.org/en/latest/reference/ide-protocol.html). This protocol communicates with Blodwen via S-Exp Expressions. If you want to see this communication have a look at `utils/Logger.coffee`.
 
-In order to send a command to idris, you will probably need some information from the current editor context. There are plenty of examples in the code and a helper package in the `utils` section. Once you have a reply you will probably need to format it. This can be done via one of the `highlighters`. Again, this is something which occurs again and again in the code.
+In order to send a command to blodwen, you will probably need some information from the current editor context. There are plenty of examples in the code and a helper package in the `utils` section. Once you have a reply you will probably need to format it. This can be done via one of the `highlighters`. Again, this is something which occurs again and again in the code.
 
 
 ## Specs

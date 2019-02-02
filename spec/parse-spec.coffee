@@ -5,8 +5,8 @@ runP = require('bennu').parse.run
 test1 = "(:protocol-version 1 0)"
 list1 = [':protocol-version', 1, 0]
 
-test2 = "(:set-prompt \"*C:\\Programming\\Idris\\Start\\hello\" 1)"
-list2 = [":set-prompt", "*C:\\Programming\\Idris\\Start\\hello", 1]
+test2 = "(:set-prompt \"*C:\\Programming\\Blodwen\\Start\\hello\" 1)"
+list2 = [":set-prompt", "*C:\\Programming\\Blodwen\\Start\\hello", 1]
 
 test3 = "(:return (:ok ()) 5)"
 list3 = [":return", [":ok", []], 5]

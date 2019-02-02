@@ -1,30 +1,30 @@
-IdrisController = require './idris-controller'
+BlodwenController = require './blodwen-controller'
 { CompositeDisposable } = require 'atom'
 url = require 'url'
-{ IdrisPanel } = require './views/panel-view'
+{ BlodwenPanel } = require './views/panel-view'
 
 module.exports =
   config:
-    pathToIdris:
-      title: 'Idris Location'
+    pathToBlodwen:
+      title: 'Blodwen Location'
       type: 'string'
-      default: 'idris'
-      description: 'Location of the Idris executable (e.g. /usr/local/bin/idris)'
+      default: 'blodwen'
+      description: 'Location of the Blodwen executable (e.g. /usr/local/bin/blodwen)'
     panelFontFamily:
       type: 'string'
       default: ''
-      description: 'The font family to use in the various idris panels'
+      description: 'The font family to use in the various blodwen panels'
     panelFontSize:
       type: 'number'
       default: 13
-      description: 'The font size to use in the various idris panels'
+      description: 'The font size to use in the various blodwen panels'
     panelFontLigatures:
       type: 'boolean'
       default: false
-      description: 'Enable ligatures in the various idris panels'
+      description: 'Enable ligatures in the various blodwen panels'
 
   activate: ->
-    @controller = new IdrisController
+    @controller = new BlodwenController
 
     subscription = atom.commands.add 'atom-text-editor[data-grammar~="blodwen"]', @controller.getCommands()
     @subscriptions = new CompositeDisposable
@@ -36,9 +36,9 @@ module.exports =
       catch error
         return
 
-      return unless protocol is 'idris:'
+      return unless protocol is 'blodwen:'
 
-      new IdrisPanel @controller, host
+      new BlodwenPanel @controller, host
 
   deactivate: ->
     @subscriptions.dispose()

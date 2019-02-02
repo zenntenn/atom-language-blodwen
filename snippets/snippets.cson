@@ -1,4 +1,4 @@
-'.source.idris':
+'.source.blodwen':
   'Show implementation':
     'prefix': 'Show'
     'body': """

@@ -1,4 +1,4 @@
-name: 'Idris Ipkg'
+name: 'Blodwen Ipkg'
 scopeName: 'source.ipkg'
 fileTypes: ['ipkg']
 patterns:

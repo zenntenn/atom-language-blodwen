@@ -1,5 +1,5 @@
-# Applies the highlighting we get from the idris compiler to our source code.
-# http://docs.idris-lang.org/en/latest/reference/ide-protocol.html#output-highlighting
+# Applies the highlighting we get from the blodwen compiler to our source code.
+# http://docs.blodwen-lang.org/en/latest/reference/ide-protocol.html#output-highlighting
 
 CycleDOM = require '@cycle/dom'
 
@@ -36,7 +36,7 @@ highlightWord = (word, info) ->
     else
       ""
 
-  classes: decorToClasses(info.info.decor).concat 'syntax--idris'
+  classes: decorToClasses(info.info.decor).concat 'syntax--blodwen'
   word: word
   description: description
 

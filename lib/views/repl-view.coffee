@@ -21,7 +21,7 @@ displaySuccess = (line) ->
 
   CycleDOM.h 'pre',
     {
-      className: 'idris-repl-output'
+      className: 'blodwen-repl-output'
       style: styles
     },
     [
@@ -46,13 +46,13 @@ REPLCycle =
 
         CycleDOM.h 'div',
           {
-            className: 'idris-repl-line'
+            className: 'blodwen-repl-line'
             style: styles
           },
           [
-            CycleDOM.h 'div', { className: 'idris-repl-input' },
+            CycleDOM.h 'div', { className: 'blodwen-repl-input' },
               [
-                CycleDOM.h 'span', { className: 'idris-repl-input-prompt' }, '> '
+                CycleDOM.h 'span', { className: 'blodwen-repl-input-prompt' }, '> '
                 line.input
               ]
             answer
@@ -60,11 +60,11 @@ REPLCycle =
 
       CycleDOM.h 'div',
         {
-          className: 'idris-panel-view'
+          className: 'blodwen-panel-view'
         },
         [
-          CycleDOM.h 'input', { type: 'text', className: 'native-key-bindings idris-repl-input-field' }, ''
-          CycleDOM.h 'div', { className: 'idris-repl-lines' }, lines
+          CycleDOM.h 'input', { type: 'text', className: 'native-key-bindings blodwen-repl-input-field' }, ''
+          CycleDOM.h 'div', { className: 'blodwen-repl-lines' }, lines
         ]
 
   main: (responses) ->

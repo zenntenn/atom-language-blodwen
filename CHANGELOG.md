@@ -1,4 +1,4 @@
-# Language-Idris Changelog
+# Language-Blodwen Changelog
 
 ## Next version
 
@@ -14,12 +14,12 @@
  - Syntax highlitning in message panel
  - Proof clause
  - higlightning of parameters
- - Better support for literate idris
+ - Better support for literate blodwen
  - Added snippets
 
 ### Fixed
- - Display error message from idris
- - Idris now restarts if stopped
+ - Display error message from blodwen
+ - Blodwen now restarts if stopped
  - fix comments highlightning 
 
 ## v0.4.9
@@ -46,13 +46,13 @@
 
 ### Added
 
-- REPL and package documentation [#146](https://github.com/idris-hackers/atom-language-idris/pull/146) (@allancto)
-- Additional commands in menu [#142](https://github.com/idris-hackers/atom-language-idris/pull/142) (@joheinz)
+- REPL and package documentation [#146](https://github.com/blodwen-hackers/atom-language-blodwen/pull/146) (@allancto)
+- Additional commands in menu [#142](https://github.com/blodwen-hackers/atom-language-blodwen/pull/142) (@joheinz)
 
 ### Fixed
 
-- Crashes with Atom 1.13.0 [#149](https://github.com/idris-hackers/atom-language-idris/pull/149) (@melted)
-- 'import public' syntax [#145](https://github.com/idris-hackers/atom-language-idris/pull/145) (@joheinz)
+- Crashes with Atom 1.13.0 [#149](https://github.com/blodwen-hackers/atom-language-blodwen/pull/149) (@melted)
+- 'import public' syntax [#145](https://github.com/blodwen-hackers/atom-language-blodwen/pull/145) (@joheinz)
 
 ## v0.4.6
 
@@ -74,22 +74,22 @@
 
 ### Fixed
 
-- Many different processes are spawned [#114](https://github.com/idris-hackers/atom-language-idris/issues/114) (@pyrtsa)
+- Many different processes are spawned [#114](https://github.com/blodwen-hackers/atom-language-blodwen/issues/114) (@pyrtsa)
 - use 'cmd' instead of 'alt' on osx (@karljs)
 
 ## v0.4.4
 
 ### Added
 
-- Make apropos view results scrollable [#109](https://github.com/idris-hackers/atom-language-idris/pull/109) (@justjoheinz)
-- Codecompletion via autocomplete-plus [#98](https://github.com/idris-hackers/atom-language-idris/pull/98) (@justjoheinz)
-- Replace deprecated abstract keyword with export [#101](https://github.com/idris-hackers/atom-language-idris/pull/101) (@justjoheinz)
-- Add snippets for the most common interface implementations [#99](https://github.com/idris-hackers/atom-language-idris/pull/99) (@justjoheinz)
+- Make apropos view results scrollable [#109](https://github.com/blodwen-hackers/atom-language-blodwen/pull/109) (@justjoheinz)
+- Codecompletion via autocomplete-plus [#98](https://github.com/blodwen-hackers/atom-language-blodwen/pull/98) (@justjoheinz)
+- Replace deprecated abstract keyword with export [#101](https://github.com/blodwen-hackers/atom-language-blodwen/pull/101) (@justjoheinz)
+- Add snippets for the most common interface implementations [#99](https://github.com/blodwen-hackers/atom-language-blodwen/pull/99) (@justjoheinz)
 
 ### Fixed
 
-- Nested with blocks [#112](https://github.com/idris-hackers/atom-language-idris/issues/112)
-- Fix passing packages in ipkg files [#111](https://github.com/idris-hackers/atom-language-idris/pull/111)
+- Nested with blocks [#112](https://github.com/blodwen-hackers/atom-language-blodwen/issues/112)
+- Fix passing packages in ipkg files [#111](https://github.com/blodwen-hackers/atom-language-blodwen/pull/111)
 
 ## v0.4.3
 
@@ -97,13 +97,13 @@
 
 ### Fixed
 
-- After closing panel once with "X" icon, it no longer appears for type checking/inspection [#90](https://github.com/idris-hackers/atom-language-idris/issues/90) (@justjoheinz)
+- After closing panel once with "X" icon, it no longer appears for type checking/inspection [#90](https://github.com/blodwen-hackers/atom-language-blodwen/issues/90) (@justjoheinz)
 
 ## v0.4.2
 
 ### Added
 
-- syntax highlighting for constructors [#95](https://github.com/idris-hackers/atom-language-idris/pull/95)
+- syntax highlighting for constructors [#95](https://github.com/blodwen-hackers/atom-language-blodwen/pull/95)
 
 ### Fixed
 
@@ -119,7 +119,7 @@
 
 ### Added
 
-- Added a REPL [#80](https://github.com/idris-hackers/atom-language-idris/pull/80)
+- Added a REPL [#80](https://github.com/blodwen-hackers/atom-language-blodwen/pull/80)
 - Added a panel for the `apropos` command
 
 ### Fixed
@@ -130,10 +130,10 @@
 
 ### Fixed
 
-- Added a better description for the path to the idris executable in the settings
+- Added a better description for the path to the blodwen executable in the settings
 - Fixed the highlighting of comments
-- Fix the highlighting of documentation comments [#82](https://github.com/idris-hackers/atom-language-idris/pull/82) (@geo2a)
-- Initial clause is inserted in wrong place for functions with multiline type annotation. [#72](https://github.com/idris-hackers/atom-language-idris/issues/72)
+- Fix the highlighting of documentation comments [#82](https://github.com/blodwen-hackers/atom-language-blodwen/pull/82) (@geo2a)
+- Initial clause is inserted in wrong place for functions with multiline type annotation. [#72](https://github.com/blodwen-hackers/atom-language-blodwen/issues/72)
 
 ## v0.3.3
 
@@ -147,7 +147,7 @@
 
 ### Added
 
-- parse the new `pkgs`option in the ipkg file [idris-lang/Idris-dev/pull/2668](https://github.com/idris-lang/Idris-dev/pull/2668)
+- parse the new `pkgs`option in the ipkg file [blodwen-lang/Blodwen-dev/pull/2668](https://github.com/blodwen-lang/Blodwen-dev/pull/2668)
 
 ### Fixed
 
@@ -157,14 +157,14 @@
 
 ### Fixed
 
-- get documentation or types for operators [#66](https://github.com/idris-hackers/atom-language-idris/issues/66)
-- removed the statusbar [#67](https://github.com/idris-hackers/atom-language-idris/issues/67)
+- get documentation or types for operators [#66](https://github.com/blodwen-hackers/atom-language-blodwen/issues/66)
+- removed the statusbar [#67](https://github.com/blodwen-hackers/atom-language-blodwen/issues/67)
 
 ## v0.3.0
 
 ### Added
 
-- Add a means of setting the Idris -p option [#29](https://github.com/idris-hackers/atom-language-idris/issues/29)
+- Add a means of setting the Blodwen -p option [#29](https://github.com/blodwen-hackers/atom-language-blodwen/issues/29)
 
 ### Fixed
 
@@ -172,12 +172,12 @@
 
 ### Added
 
-- Restart the idris compiler after every commmand if it was killed [#54](https://github.com/idris-hackers/atom-language-idris/pull/54)
-- added the ability to style all the idris-panels
+- Restart the blodwen compiler after every commmand if it was killed [#54](https://github.com/blodwen-hackers/atom-language-blodwen/pull/54)
+- added the ability to style all the blodwen-panels
 
 ### Fixed
 
-- Status message should appear only in idris projects [#52](https://github.com/idris-hackers/atom-language-idris/issues/52) many thanks to @jeremy-w
+- Status message should appear only in blodwen projects [#52](https://github.com/blodwen-hackers/atom-language-blodwen/issues/52) many thanks to @jeremy-w
 
 ## v0.2.4
 
@@ -185,8 +185,8 @@
 
 ### Fixed
 
-- Uncaught ReferenceError: editor is not defined [#49](https://github.com/idris-hackers/atom-language-idris/issues/49)
-- Error when searching for type, documentation [#37](https://github.com/idris-hackers/atom-language-idris/issues/37)
+- Uncaught ReferenceError: editor is not defined [#49](https://github.com/blodwen-hackers/atom-language-blodwen/issues/49)
+- Error when searching for type, documentation [#37](https://github.com/blodwen-hackers/atom-language-blodwen/issues/37)
 
 ## v0.2.3
 
@@ -198,9 +198,9 @@
 
 ### Fixed
 
-- Uncaught Error: Can't save buffer with no file path [#47](https://github.com/idris-hackers/atom-language-idris/issues/47)
+- Uncaught Error: Can't save buffer with no file path [#47](https://github.com/blodwen-hackers/atom-language-blodwen/issues/47)
 - save files before executing a command (@edwinb)
-- The Idris Errors panel should tell me if typechecking went successfully [#43](https://github.com/idris-hackers/atom-language-idris/issues/43) (@edwinb)
+- The Blodwen Errors panel should tell me if typechecking went successfully [#43](https://github.com/blodwen-hackers/atom-language-blodwen/issues/43) (@edwinb)
 
 ## v0.2.2
 
@@ -228,21 +228,21 @@
 
 ### Fixed
 
-- fixed bug in the parser when there where backslashes in the answer [#32](https://github.com/idris-hackers/atom-language-idris/issues/32) (@david-christiansen)
-- Program not loaded before running interactive editing commands [#34](https://github.com/idris-hackers/atom-language-idris/issues/34)
-- faster startup [#28](https://github.com/idris-hackers/atom-language-idris/issues/28)
+- fixed bug in the parser when there where backslashes in the answer [#32](https://github.com/blodwen-hackers/atom-language-blodwen/issues/32) (@david-christiansen)
+- Program not loaded before running interactive editing commands [#34](https://github.com/blodwen-hackers/atom-language-blodwen/issues/34)
+- faster startup [#28](https://github.com/blodwen-hackers/atom-language-blodwen/issues/28)
 
 ## v0.1.4
 
 ### Added
 
-- new metavariable view (`Language Idris: Metavariables`)
+- new metavariable view (`Language Blodwen: Metavariables`)
 - a tutorial that explains how to use this package
-- context menu for `Language Idris: Type Of` and `Language Idris: Docs For`
+- context menu for `Language Blodwen: Type Of` and `Language Blodwen: Docs For`
 
 ### Fixed
 
-- `Language Idris: Proof Search` and `Language Idris: Add Clause`
+- `Language Blodwen: Proof Search` and `Language Blodwen: Add Clause`
 - deprecations that now broke the editor because of the dropped API methods
 
 ## v0.1.3
@@ -253,21 +253,21 @@
 
 - Better syntax highlighting
 - fixed the parser for the ide-mode lisp
-- fixed [#18](https://github.com/idris-hackers/atom-language-idris/issues/18)
-- fixed [#19](https://github.com/idris-hackers/atom-language-idris/issues/19)
+- fixed [#18](https://github.com/blodwen-hackers/atom-language-blodwen/issues/18)
+- fixed [#19](https://github.com/blodwen-hackers/atom-language-blodwen/issues/19)
 - fixed an issue with the error lines not being clickable in the error panel
 
 ## v0.1.1
 
 ### Added
 
-- Type and doc info highlighting https://github.com/idris-hackers/atom-language-idris/pull/9 (@archaeron)
+- Type and doc info highlighting https://github.com/blodwen-hackers/atom-language-blodwen/pull/9 (@archaeron)
 
 ### Fixed
 
-- Ensure that keybindings only work on Idris files (#2)
+- Ensure that keybindings only work on Blodwen files (#2)
 - Syntax highlighting for infix functions
-- Fixed a crash when idris was not installed
+- Fixed a crash when blodwen was not installed
 
 ## v0.1.0
 

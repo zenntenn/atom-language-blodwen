@@ -6,27 +6,27 @@ joinHtmlElements = (containerElem, elems) ->
 
 createCodeElement = ->
   pre = document.createElement 'pre'
-  fontFamily = atom.config.get 'language-idris.panelFontFamily'
+  fontFamily = atom.config.get 'language-blodwen.panelFontFamily'
   if fontFamily != ''
     pre.style.fontFamily = fontFamily
-  fontSize = atom.config.get 'language-idris.panelFontSize'
+  fontSize = atom.config.get 'language-blodwen.panelFontSize'
   pre.style.fontSize = "#{fontSize}px"
-  enableLigatures = atom.config.get 'language-idris.panelFontLigatures'
+  enableLigatures = atom.config.get 'language-blodwen.panelFontLigatures'
   if enableLigatures
     pre.style.webkitFontFeatureSettings = '"liga"'
   pre
 
 fontOptions = ->
-  fontSize = atom.config.get 'language-idris.panelFontSize'
+  fontSize = atom.config.get 'language-blodwen.panelFontSize'
   fontSizeAttr = "#{fontSize}px"
-  enableLigatures = atom.config.get 'language-idris.panelFontLigatures'
+  enableLigatures = atom.config.get 'language-blodwen.panelFontLigatures'
   webkitFontFeatureSettings =
     if enableLigatures
       '"liga"'
     else
       '"inherit"'
 
-  fontFamily = atom.config.get 'language-idris.panelFontFamily'
+  fontFamily = atom.config.get 'language-blodwen.panelFontFamily'
   if fontFamily != ''
     fontFamily
   else

@@ -6,9 +6,9 @@ textNode = (text) ->
 
 class HolesView extends HTMLElement
   initialize: (holes) ->
-    @classList.add 'idris-panel'
+    @classList.add 'blodwen-panel'
     @holesContainer = dom.createCodeElement()
-    @holesContainer.classList.add 'idris-mode'
+    @holesContainer.classList.add 'blodwen-mode'
     @holesContainer.classList.add 'block'
     @holesContainer.classList.add 'blodwen-holes-view'
 
@@ -29,8 +29,8 @@ class HolesView extends HTMLElement
     prettyConclusion = @prettyprintConclusion name, conclusion
 
     hole = dom.joinHtmlElements 'div', [textNode "#{name}"].concat(prettyPremises, prettyConclusion)
-    hole.classList.add 'idris'
-    hole.classList.add  'idris-hole'
+    hole.classList.add 'blodwen'
+    hole.classList.add  'blodwen-hole'
     hole
 
   prettyprintPremises: (premises) ->

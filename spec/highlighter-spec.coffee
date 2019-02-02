@@ -38,7 +38,7 @@ describe "The highlighter", ->
     should1 =
       [
         {
-          classes: ['syntax--storage', 'syntax--type', 'syntax--idris']
+          classes: ['syntax--storage', 'syntax--type', 'syntax--blodwen']
           description: "Type\n\nUnary natural numbers"
           word: 'Prelude.Nat.Nat'
         }
@@ -47,13 +47,13 @@ describe "The highlighter", ->
           word: ' : '
         }
         {
-          classes: ['syntax--storage', 'syntax--type', 'syntax--idris']
+          classes: ['syntax--storage', 'syntax--type', 'syntax--blodwen']
           description: "Type\n\nThe type of types"
           word: 'Type'
         }
       ]
-    should1String = '<span class="syntax--storage syntax--type syntax--idris">Prelude.Nat.Nat</span> : <span class="syntax--storage syntax--type syntax--idris">Type</span>'
-    should1Html = '<span><span class="syntax--storage syntax--type syntax--idris">Prelude.Nat.Nat</span> : <span class="syntax--storage syntax--type syntax--idris">Type</span></span>'
+    should1String = '<span class="syntax--storage syntax--type syntax--blodwen">Prelude.Nat.Nat</span> : <span class="syntax--storage syntax--type syntax--blodwen">Type</span>'
+    should1Html = '<span><span class="syntax--storage syntax--type syntax--blodwen">Prelude.Nat.Nat</span> : <span class="syntax--storage syntax--type syntax--blodwen">Type</span></span>'
     highlight1 = highlighter.highlight(code1, info1)
     console.log highlight1
     expect(highlight1).toEqual(should1)

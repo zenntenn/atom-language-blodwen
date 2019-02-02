@@ -3,40 +3,40 @@
 InformationView = require './views/information-view'
 HolesView = require './views/holes-view'
 Logger = require './utils/Logger'
-IdrisModel = require './idris-model'
+BlodwenModel = require './blodwen-model'
 Ipkg = require './utils/ipkg'
 Symbol = require './utils/symbol'
 editorHelper = require './utils/editor'
 highlighter = require './utils/highlighter'
 
-class IdrisController
+class BlodwenController
   errorMarkers: []
 
   getCommands: ->
-    'language-idris:type-of': @runCommand @getTypeForWord
-    'language-idris:docs-for': @runCommand @getDocsForWord
-    'language-idris:case-split': @runCommand @doCaseSplit
-    'language-idris:add-clause': @runCommand @doAddClause
-    'language-idris:make-with': @runCommand @doMakeWith
-    'language-idris:make-lemma': @runCommand @doMakeLemma
-    'language-idris:make-case': @runCommand @doMakeCase
-    'language-idris:holes': @runCommand @showHoles
-    'language-idris:proof-search': @runCommand @doProofSearch
-    'language-idris:typecheck': @runCommand @typecheckFile
-    'language-idris:print-definition': @runCommand @printDefinition
-    'language-idris:stop-compiler': @stopCompiler
-    'language-idris:open-repl': @runCommand @openREPL
-    'language-idris:apropos': @runCommand @apropos
-    'language-idris:add-proof-clause': @runCommand @doAddProofClause
-    'language-idris:browse-namespace': @runCommand @doBrowseNamespace
-    'language-idris:close-information-view': @hideAndClearMessagePanel
+    'language-blodwen:type-of': @runCommand @getTypeForWord
+    'language-blodwen:docs-for': @runCommand @getDocsForWord
+    'language-blodwen:case-split': @runCommand @doCaseSplit
+    'language-blodwen:add-clause': @runCommand @doAddClause
+    'language-blodwen:make-with': @runCommand @doMakeWith
+    'language-blodwen:make-lemma': @runCommand @doMakeLemma
+    'language-blodwen:make-case': @runCommand @doMakeCase
+    'language-blodwen:holes': @runCommand @showHoles
+    'language-blodwen:proof-search': @runCommand @doProofSearch
+    'language-blodwen:typecheck': @runCommand @typecheckFile
+    'language-blodwen:print-definition': @runCommand @printDefinition
+    'language-blodwen:stop-compiler': @stopCompiler
+    'language-blodwen:open-repl': @runCommand @openREPL
+    'language-blodwen:apropos': @runCommand @apropos
+    'language-blodwen:add-proof-clause': @runCommand @doAddProofClause
+    'language-blodwen:browse-namespace': @runCommand @doBrowseNamespace
+    'language-blodwen:close-information-view': @hideAndClearMessagePanel
 
-  isIdrisFile: (uri) ->
+  isBlodwenFile: (uri) ->
     uri?.match? /\.blod$/
 
-  # check if this is a literate idris file
+  # check if this is a literate blodwen file
   isLiterateGrammar: () ->
-    @getEditor().getGrammar().scopeName == "source.idris.literate"
+    @getEditor().getGrammar().scopeName == "source.blodwen.literate"
 
   # prefix code lines with "> "  if we are in the literate grammar
   prefixLiterateClause: (clause) =>
@@ -57,7 +57,7 @@ class IdrisController
     marker = editor.markBufferRange(range, invalidate: 'never')
     editor.decorateMarker marker,
       type: type
-      class: 'highlight-idris-error'
+      class: 'highlight-blodwen-error'
     marker
 
   destroyMarkers: () ->
@@ -66,7 +66,7 @@ class IdrisController
 
   destroy: ->
     if @model
-      Logger.logText 'Idris: Shutting down!'
+      Logger.logText 'Blodwen: Shutting down!'
       @model.stop()
     @statusbar.destroy()
 
@@ -92,9 +92,9 @@ class IdrisController
   initialize: (compilerOptions) ->
     @destroyMarkers()
     if !@model
-      @model = new IdrisModel
+      @model = new BlodwenModel
       @messages = new MessagePanelView
-        title: 'Idris Messages'
+        title: 'Blodwen Messages'
       @messages.attach()
       @messages.hide()
     @model.setCompilerOptions compilerOptions
@@ -117,12 +117,12 @@ class IdrisController
 
   # see https://github.com/atom/autocomplete-plus/wiki/Provider-API
   provideReplCompletions: =>
-    selector: '.source.idris'
+    selector: '.source.blodwen'
 
     inclusionPriority: 1
     excludeLowerPriority: false
 
-    # Get suggestions from the Idris REPL. You can always ask for suggestions <Ctrl+Space>
+    # Get suggestions from the Blodwen REPL. You can always ask for suggestions <Ctrl+Space>
     # or type at least 3 characters to get suggestions based on your autocomplete-plus
     # settings.
     getSuggestions: ({ editor, bufferPosition, scopeDescriptor, prefix, activatedManually }) =>
@@ -151,10 +151,10 @@ class IdrisController
     editor = @getEditor()
     @saveFile editor
     uri = editor.getURI()
-    @clearMessagePanel 'Idris: Typechecking ...'
+    @clearMessagePanel 'Blodwen: Typechecking ...'
 
     successHandler = ({ responseType, msg }) =>
-      @clearMessagePanel 'Idris: File loaded successfully'
+      @clearMessagePanel 'Blodwen: File loaded successfully'
 
     @model
       .load uri
@@ -166,11 +166,11 @@ class IdrisController
     @saveFile editor
     uri = editor.getURI()
     word = Symbol.serializeWord editorHelper.getWordUnderCursor(editor)
-    @clearMessagePanel 'Idris: Searching docs for <tt>' + word + '</tt> ...'
+    @clearMessagePanel 'Blodwen: Searching docs for <tt>' + word + '</tt> ...'
 
     successHandler = ({ responseType, msg }) =>
       [type, highlightingInfo] = msg
-      @clearMessagePanel 'Idris: Docs for <tt>' + word + '</tt>'
+      @clearMessagePanel 'Blodwen: Docs for <tt>' + word + '</tt>'
 
       informationView = new InformationView
       informationView.initialize
@@ -191,11 +191,11 @@ class IdrisController
     uri = editor.getURI()
     word = Symbol.serializeWord editorHelper.getWordUnderCursor(editor)
 
-    @clearMessagePanel 'Idris: Searching type of <tt>' + word + '</tt> ...'
+    @clearMessagePanel 'Blodwen: Searching type of <tt>' + word + '</tt> ...'
 
     successHandler = ({ responseType, msg }) =>
       [type, highlightingInfo] = msg
-      @clearMessagePanel 'Idris: Type of <tt>' + word + '</tt>'
+      @clearMessagePanel 'Blodwen: Type of <tt>' + word + '</tt>'
 
       informationView = new InformationView
       informationView.initialize
@@ -217,7 +217,7 @@ class IdrisController
     line = cursor.getBufferRow()
     word = editorHelper.getWordUnderCursor editor
 
-    @clearMessagePanel 'Idris: Do case split ...'
+    @clearMessagePanel 'Blodwen: Do case split ...'
 
     successHandler = ({ responseType, msg }) =>
       [split] = msg
@@ -243,7 +243,7 @@ class IdrisController
     # not treated as a symbol
     word = ' ' + editorHelper.getWordUnderCursor editor
 
-    @clearMessagePanel 'Idris: Add clause ...'
+    @clearMessagePanel 'Blodwen: Add clause ...'
 
     successHandler =  ({ responseType, msg }) =>
       [clause] = @prefixLiterateClause msg
@@ -275,7 +275,7 @@ class IdrisController
     uri = editor.getURI()
     line = editor.getLastCursor().getBufferRow()
     word = editorHelper.getWordUnderCursor editor
-    @clearMessagePanel 'Idris: Add proof clause ...'
+    @clearMessagePanel 'Blodwen: Add proof clause ...'
 
     successHandler = ({ responseType, msg }) =>
       [clause] = @prefixLiterateClause msg
@@ -308,7 +308,7 @@ class IdrisController
     line = editor.getLastCursor().getBufferRow()
     word = editorHelper.getWordUnderCursor editor
 
-    @clearMessagePanel 'Idris: Make with view ...'
+    @clearMessagePanel 'Blodwen: Make with view ...'
 
     successHandler = ({ responseType, msg }) =>
       [clause] = @prefixLiterateClause msg
@@ -331,7 +331,7 @@ class IdrisController
         .flatMap => @model.makeWith line + 1, word
         .subscribe successHandler, @displayErrors
     else
-      @clearMessagePanel "Idris: Illegal position to make a with view"
+      @clearMessagePanel "Blodwen: Illegal position to make a with view"
 
   # construct a lemma from a hole
   doMakeLemma: ({ target }) =>
@@ -340,7 +340,7 @@ class IdrisController
     uri = editor.getURI()
     line = editor.getLastCursor().getBufferRow()
     word = editorHelper.getWordUnderCursor editor
-    @clearMessagePanel 'Idris: Make lemma ...'
+    @clearMessagePanel 'Blodwen: Make lemma ...'
 
     successHandler = ({ responseType, msg }) =>
       # param1 contains the code which replaces the hole
@@ -396,7 +396,7 @@ class IdrisController
     uri = editor.getURI()
     line = editor.getLastCursor().getBufferRow()
     word = editorHelper.getWordUnderCursor editor
-    @clearMessagePanel 'Idris: Make case ...'
+    @clearMessagePanel 'Blodwen: Make case ...'
 
     successHandler = ({ responseType, msg }) =>
       [clause] = @prefixLiterateClause msg
@@ -424,11 +424,11 @@ class IdrisController
     editor = @getEditor()
     @saveFile editor
     uri = editor.getURI()
-    @clearMessagePanel 'Idris: Searching holes ...'
+    @clearMessagePanel 'Blodwen: Searching holes ...'
 
     successHandler = ({ responseType, msg }) =>
       [holes] = msg
-      @clearMessagePanel 'Idris: Holes'
+      @clearMessagePanel 'Blodwen: Holes'
       holesView = new HolesView
       holesView.initialize holes
       @messages.add holesView
@@ -446,7 +446,7 @@ class IdrisController
     uri = editor.getURI()
     line = editor.getLastCursor().getBufferRow()
     word = editorHelper.getWordUnderCursor editor
-    @clearMessagePanel 'Idris: Searching proof ...'
+    @clearMessagePanel 'Blodwen: Searching proof ...'
 
     successHandler = ({ responseType, msg }) =>
       [res] = msg
@@ -455,7 +455,7 @@ class IdrisController
       console.log res
       if (res.startsWith("?"))
         # proof search returned a new hole
-        @clearMessagePanel 'Idris: Searching proof was not successful.'
+        @clearMessagePanel 'Blodwen: Searching proof was not successful.'
       else
         editor.transact ->
           # Move the cursor to the beginning of the word
@@ -482,7 +482,7 @@ class IdrisController
     nameSpace = editor.getSelectedText()
     console.log nameSpace
 
-    @clearMessagePanel 'Idris: Browsing namespace <tt>' + nameSpace + '</tt>'
+    @clearMessagePanel 'Blodwen: Browsing namespace <tt>' + nameSpace + '</tt>'
 
     successHandler = ({ responseType, msg }) =>
       # the information is in a two dimensional array
@@ -511,11 +511,11 @@ class IdrisController
     @saveFile editor
     uri = editor.getURI()
     word = Symbol.serializeWord editorHelper.getWordUnderCursor(editor)
-    @clearMessagePanel 'Idris: Searching definition of <tt>' + word + '</tt> ...'
+    @clearMessagePanel 'Blodwen: Searching definition of <tt>' + word + '</tt> ...'
 
     successHandler = ({ responseType, msg }) =>
       [type, highlightingInfo] = msg
-      @clearMessagePanel 'Idris: Definition of <tt>' + word + '</tt>'
+      @clearMessagePanel 'Blodwen: Definition of <tt>' + word + '</tt>'
       informationView = new InformationView
       informationView.initialize
         obligation: type
@@ -532,7 +532,7 @@ class IdrisController
   # open the repl window
   openREPL: ({ target }) =>
     uri = @getEditor().getURI()
-    @clearMessagePanel 'Idris: opening REPL ...'
+    @clearMessagePanel 'Blodwen: opening REPL ...'
 
     successHandler = ({ responseType, msg }) =>
       @hideAndClearMessagePanel()
@@ -541,7 +541,7 @@ class IdrisController
         split: 'right'
         searchAllPanes: true
 
-      atom.workspace.open "idris://repl", options
+      atom.workspace.open "blodwen://repl", options
 
     @model
       .load uri
@@ -551,7 +551,7 @@ class IdrisController
   # open the apropos window
   apropos: ({ target }) =>
     uri = @getEditor().getURI()
-    @clearMessagePanel 'Idris: opening apropos view ...'
+    @clearMessagePanel 'Blodwen: opening apropos view ...'
 
     successHandler = ({ responseType, msg }) =>
       @hideAndClearMessagePanel()
@@ -560,7 +560,7 @@ class IdrisController
         split: 'right'
         searchAllPanes: true
 
-      atom.workspace.open "idris://apropos", options
+      atom.workspace.open "blodwen://apropos", options
 
     @model
       .load uri
@@ -569,7 +569,7 @@ class IdrisController
 
   # generic function to display errors in the status bar
   displayErrors: (err) =>
-    @clearMessagePanel '<i class="icon-bug"></i> Idris Errors'
+    @clearMessagePanel '<i class="icon-bug"></i> Blodwen Errors'
 
     # display the general error message
     if err.message?
@@ -592,7 +592,7 @@ class IdrisController
         file: uri
 
       # this provides a highlighted version of the error message
-      # returned by idris
+      # returned by blodwen
       @rawMessage info
 
       editor = atom.workspace.getActiveTextEditor()
@@ -606,4 +606,4 @@ class IdrisController
         @errorMarkers.push gutterMarker
         @errorMarkers.push lineMarker
 
-module.exports = IdrisController
+module.exports = BlodwenController

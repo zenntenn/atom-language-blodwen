@@ -1,6 +1,6 @@
 {
   "name": "language-blodwen",
-  "main": "./lib/language-idris",
+  "main": "./lib/language-blodwen",
   "version": "0.5.0",
   "private": true,
   "description": "A plugin for developing with Blodwen",
